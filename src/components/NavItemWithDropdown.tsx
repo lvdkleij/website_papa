@@ -52,13 +52,13 @@ export const NavItemWithDropdown: React.FC<{ text: string }> = ({ text }) => {
           <section className="bg-white absolute">
             <ul>
               <li>
-                <NavItem text="Financieel beheer" uri="/financieel-beheer" />
+                <NavItem text="Financieel beheer" uri="/financieel-beheer" fontSize="base" />
               </li>
               <li>
-                <NavItem text="Operationeel management" uri="/operationeel-management" />
+                <NavItem text="Operationeel management" uri="/operationeel-management" fontSize="base" />
               </li>
               <li>
-                <NavItem text="Excel training" uri="/excel-training" />
+                <NavItem text="Excel training" uri="/excel-training" fontSize="base" />
               </li>
             </ul>
           </section>
