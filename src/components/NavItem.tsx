@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
 
-export const NavItem: React.FC<{ text: string; uri: string; fontSize?: 'lg' | 'base' }> = ({
-  text,
-  uri,
-  fontSize = 'lg',
-}) => {
+export const NavItem: React.FC<{
+  text: string;
+  uri: string;
+}> = ({ text, uri }) => {
   return (
-    <Link href={uri} className={`py-3 px-5 text-${fontSize} inline-block`}>
+    <Link href={uri} className={`py-3 px-5 sm:px-5 text-base sm:text-lg inline-block`}>
       {text}
     </Link>
   );

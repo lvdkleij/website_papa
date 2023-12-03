@@ -3,10 +3,9 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import NavItem from './NavItem';
 
-export const NavItemWithDropdown: React.FC<{ text: string; position?: 'absolute' | '' }> = ({
-  text,
-  position = '',
-}) => {
+export const NavItemWithDropdown: React.FC<{
+  text: string;
+}> = ({ text }) => {
   const [displayServices, setDisplayServices] = useState(false);
   const [displayServicesTimeout, setDisplayServicesTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -40,7 +39,7 @@ export const NavItemWithDropdown: React.FC<{ text: string; position?: 'absolute'
   return (
     <>
       <div onMouseEnter={() => displayServicesSection(300)} onMouseLeave={() => hideServicesSection()}>
-        <button className="py-3 px-5 text-lg w-full flex items-center" onClick={() => onClick()}>
+        <button className={`py-3 px-5 text-base sm:text-lg w-full flex items-center`} onClick={() => onClick()}>
           {text}
           <Image
             className="ml-2"
@@ -52,16 +51,16 @@ export const NavItemWithDropdown: React.FC<{ text: string; position?: 'absolute'
           ></Image>
         </button>
         {displayServices && (
-          <section className={`bg-white ${position}`}>
+          <section className="bg-white sm:absolute">
             <ul>
               <li>
-                <NavItem text="Financieel beheer" uri="/financieel-beheer" fontSize="base" />
+                <NavItem text="Financieel beheer" uri="/financieel-beheer" />
               </li>
               <li>
-                <NavItem text="Operationeel management" uri="/operationeel-management" fontSize="base" />
+                <NavItem text="Operationeel management" uri="/operationeel-management" />
               </li>
               <li>
-                <NavItem text="Excel training" uri="/excel-training" fontSize="base" />
+                <NavItem text="Excel training" uri="/excel-training" />
               </li>
             </ul>
           </section>

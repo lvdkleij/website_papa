@@ -6,11 +6,11 @@ import NavBar from './NavBar';
 const Header: React.FC = () => {
   return (
     <>
-      <header className="h-28 bg-white fixed top-0 left-0 right-0 flex items-center w-full justify-between">
+      <header className="h-20 sm:h-28 bg-white fixed top-0 left-0 right-0 flex items-center w-full justify-between">
         <Logo />
         <NavBar />
       </header>
-      <div className="h-28"></div>
+      <div className="h-20 sm:h-28"></div>
     </>
   );
 };
@@ -22,4 +22,5 @@ const Logo: React.FC = () => {
     </section>
   );
 };
+
 export default Header;
