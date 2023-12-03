@@ -9,7 +9,7 @@ export const NavBar: React.FC = () => {
 
   return (
     <>
-      <button onClick={() => setDisplayNav(!displayNav)} className="sm:hidden">
+      <button onClick={() => setDisplayNav(!displayNav)} className="sm:hidden px-3">
         <Image src="/menu.svg" alt="Bekijk services" width={24} height={24}></Image>
       </button>
 

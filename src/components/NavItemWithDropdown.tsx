@@ -40,11 +40,11 @@ export const NavItemWithDropdown: React.FC<{
     <>
       <div
         onMouseEnter={() => displayServicesSection(300)}
-        onMouseLeave={() => hideServicesSection()}
+        onMouseLeave={hideServicesSection}
         aria-haspopup="menu"
         aria-expanded={displayServices}
       >
-        <button className={`py-3 px-5 text-base sm:text-lg w-full flex items-center`} onClick={() => onClick()}>
+        <button className={`py-3 px-5 text-base sm:text-lg w-full flex items-center`} onClick={onClick}>
           {text}
           <Image
             className="ml-2"
