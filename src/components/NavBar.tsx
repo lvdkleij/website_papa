@@ -23,7 +23,7 @@ export const NavBar: React.FC = () => {
             <NavItem text="Home" uri="/" />
           </li>
           <li>
-            <NavItemWithDropdown text="Services" />
+            <NavItemWithDropdown text="Diensten" />
           </li>
           <li>
             <NavItem text="Over mij" uri="/over-mij" />
