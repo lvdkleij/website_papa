@@ -12,7 +12,7 @@ export const NavBar: React.FC = () => {
 
   useEffect(() => setIsSmallScreen(_isSmallScreen), [_isSmallScreen]);
 
-  return <>{isSmallScreen ? <SmallScreenNav /> : <LargeScreenNav />}</>;
+  return isSmallScreen === undefined ? <></> : isSmallScreen ? <SmallScreenNav /> : <LargeScreenNav />;
 };
 
 const SmallScreenNav: React.FC = () => {
@@ -41,7 +41,9 @@ const Ff: React.FC = () => {
             Home
           </Link>
         </li>
-        <li>{/* <Services2 /> */}</li>
+        <li>
+          <NavItemWithDropdown text="Services" />
+        </li>
         <li>
           <Link href="/over-mij" className="py-3 px-5 text-base w-full inline-block">
             Over mij
@@ -65,7 +67,7 @@ const LargeScreenNav: React.FC = () => {
           <NavItem text="Home" uri="/" />
         </li>
         <li>
-          <NavItemWithDropdown text="Services" />
+          <NavItemWithDropdown text="Services" position="absolute" />
         </li>
         <li>
           <NavItem text="Over mij" uri="/over-mij" />
@@ -75,43 +77,6 @@ const LargeScreenNav: React.FC = () => {
         </li>
       </ul>
     </nav>
-  );
-};
-
-const Services2: React.FC = () => {
-  const [displayServices, setDisplayServices] = useState(false);
-
-  return (
-    <>
-      <button
-        className="py-3 px-5 text-base w-full flex items-center"
-        onClick={() => setDisplayServices(!displayServices)}
-      >
-        Services
-        <Image className="ml-2" src="/expand_more.svg" alt="Bekijk services" width={12} height={12}></Image>
-      </button>
-      {displayServices && (
-        <section className="bg-white">
-          <ul>
-            <li>
-              <Link href="/financieel-beheer" className="w-full py-3 px-8 text-base inline-block ">
-                Financieel beheer
-              </Link>
-            </li>
-            <li>
-              <Link href="/operationeel-management" className="w-full py-3 px-8 text-base inline-block">
-                Operationeel management
-              </Link>
-            </li>
-            <li>
-              <Link href="/excel-training" className="w-full py-3 px-8 text-base inline-block">
-                Excel training
-              </Link>
-            </li>
-          </ul>
-        </section>
-      )}
-    </>
   );
 };
 

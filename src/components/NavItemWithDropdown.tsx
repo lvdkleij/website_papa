@@ -3,7 +3,10 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import NavItem from './NavItem';
 
-export const NavItemWithDropdown: React.FC<{ text: string }> = ({ text }) => {
+export const NavItemWithDropdown: React.FC<{ text: string; position?: 'absolute' | '' }> = ({
+  text,
+  position = '',
+}) => {
   const [displayServices, setDisplayServices] = useState(false);
   const [displayServicesTimeout, setDisplayServicesTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -49,7 +52,7 @@ export const NavItemWithDropdown: React.FC<{ text: string }> = ({ text }) => {
           ></Image>
         </button>
         {displayServices && (
-          <section className="bg-white absolute">
+          <section className={`bg-white ${position}`}>
             <ul>
               <li>
                 <NavItem text="Financieel beheer" uri="/financieel-beheer" fontSize="base" />
