@@ -1,20 +1,21 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavItem from './NavItem';
 import NavItemWithDropdown from './NavItemWithDropdown';
+import { useMediaQuery } from 'react-responsive';
 
 export const NavBar: React.FC = () => {
-  return (
-    <>
-      <nav>
-        <LargeScreenNav />
-      </nav>
-    </>
-  );
+  const _isSmallScreen = useMediaQuery({ maxWidth: 650 });
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>();
+
+  useEffect(() => setIsSmallScreen(_isSmallScreen), [_isSmallScreen]);
+
+  return <>{isSmallScreen ? <SmallScreenNav /> : <LargeScreenNav />}</>;
 };
 
-const SmallScreenHeader: React.FC = () => {
+const SmallScreenNav: React.FC = () => {
   const [displayNav, setDisplayNav] = useState(false);
 
   return (
@@ -26,12 +27,12 @@ const SmallScreenHeader: React.FC = () => {
           </button>
         </li>
       </ul>
-      {displayNav && <SmallScreenNav />}
+      {displayNav && <Ff />}
     </>
   );
 };
 
-const SmallScreenNav: React.FC = () => {
+const Ff: React.FC = () => {
   return (
     <nav className="absolute top-full left-0 w-full z-10 bg-white">
       <ul className="flex flex-col">
@@ -40,9 +41,7 @@ const SmallScreenNav: React.FC = () => {
             Home
           </Link>
         </li>
-        <li>
-          <Services2 />
-        </li>
+        <li>{/* <Services2 /> */}</li>
         <li>
           <Link href="/over-mij" className="py-3 px-5 text-base w-full inline-block">
             Over mij
