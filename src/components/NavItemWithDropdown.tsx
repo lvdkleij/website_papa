@@ -44,7 +44,7 @@ export const NavItemWithDropdown: React.FC<{
         aria-haspopup="menu"
         aria-expanded={displayServices}
       >
-        <button className={`py-3 px-5 text-base sm:text-lg w-full flex items-center`} onClick={onClick}>
+        <button className={`py-3 px-5 text-base md:text-lg w-full flex items-center`} onClick={onClick}>
           {text}
           <Image
             className="ml-2"
@@ -62,16 +62,16 @@ export const NavItemWithDropdown: React.FC<{
 };
 
 const DropdownMenu = () => (
-  <section className="bg-white sm:absolute">
+  <section className="bg-white md:absolute">
     <ul>
       <li>
-        <NavItem text="Financieel beheer" uri="/financieel-beheer" className="max-sm:px-8" />
+        <NavItem text="Financieel beheer" uri="/financieel-beheer" className="max-md:px-8" />
       </li>
       <li>
-        <NavItem text="Operationeel management" uri="/operationeel-management" className="max-sm:px-8" />
+        <NavItem text="Operationeel management" uri="/operationeel-management" className="max-md:px-8" />
       </li>
       <li>
-        <NavItem text="Excel training" uri="/excel-training" className="max-sm:px-8" />
+        <NavItem text="Excel training" uri="/excel-training" className="max-md:px-8" />
       </li>
     </ul>
   </section>

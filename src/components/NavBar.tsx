@@ -9,16 +9,16 @@ export const NavBar: React.FC = () => {
 
   return (
     <>
-      <button onClick={() => setDisplayNav(!displayNav)} className="sm:hidden px-3">
-        <Image src="/menu.svg" alt="Bekijk services" width={24} height={24}></Image>
+      <button onClick={() => setDisplayNav(!displayNav)} className="md:hidden px-3">
+        <Image src={`/${displayNav ? 'close' : 'menu'}.svg`} alt="Bekijk services" width={24} height={24}></Image>
       </button>
 
       <nav
         className={`${
           displayNav ? 'block' : 'hidden'
-        } sm:block max-sm:absolute max-sm:top-full max-sm:left-0 max-sm:w-full max-sm:z-10 max-sm:bg-white`}
+        } md:block max-md:absolute max-md:top-full max-md:left-0 max-md:w-full max-md:z-10 max-md:bg-white`}
       >
-        <ul className="flex max-sm:flex-col">
+        <ul className="flex max-md:flex-col">
           <li>
             <NavItem text="Home" uri="/" />
           </li>

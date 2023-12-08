@@ -7,7 +7,7 @@ export const NavItem: React.FC<{
   className?: string;
 }> = ({ text, uri, className = '' }) => {
   return (
-    <Link href={uri} className={`py-3 px-5 text-base sm:text-lg inline-block ${className}`}>
+    <Link href={uri} className={`py-3 px-5 text-base md:text-lg inline-block ${className}`}>
       {text}
     </Link>
   );

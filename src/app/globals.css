@@ -20,3 +20,11 @@ body {
   color: black;
   background: white;
 }
+
+@layer utilities {
+  .mx-auto-min-8 {
+    @apply mx-auto;
+    margin-left: max(2rem, auto);
+    margin-right: max(2rem, auto);
+  }
+}
